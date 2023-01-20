@@ -1,0 +1,133 @@
+{
+    "version": "0.1.0",
+    "name": "let_it_go",
+    "constants": [
+      {
+        "name": "USER_SEED",
+        "type": "bytes",
+        "value": "[117, 115, 101, 114]"
+      },
+      {
+        "name": "MESSAGE_SEED",
+        "type": "bytes",
+        "value": "[109, 101, 115, 115, 97, 103, 101]"
+      }
+    ],
+    "instructions": [
+      {
+        "name": "initUser",
+        "accounts": [
+          {
+            "name": "userAccount",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "authority",
+            "isMut": true,
+            "isSigner": true
+          },
+          {
+            "name": "systemProgram",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "avatar",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "newMessage",
+        "accounts": [
+          {
+            "name": "messageAccount",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "userAccount",
+            "isMut": true,
+            "isSigner": false
+          },
+          {
+            "name": "authority",
+            "isMut": true,
+            "isSigner": true
+          },
+          {
+            "name": "systemProgram",
+            "isMut": false,
+            "isSigner": false
+          }
+        ],
+        "args": [
+          {
+            "name": "content",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "accounts": [
+      {
+        "name": "UserAccount",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "avatar",
+              "type": "string"
+            },
+            {
+              "name": "authority",
+              "type": "publicKey"
+            },
+            {
+              "name": "lastMessageId",
+              "type": "u16"
+            },
+            {
+              "name": "messageCount",
+              "type": "u16"
+            }
+          ]
+        }
+      },
+      {
+        "name": "MessageAccount",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "id",
+              "type": "u16"
+            },
+            {
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "name": "creator",
+              "type": "publicKey"
+            },
+            {
+              "name": "authority",
+              "type": "publicKey"
+            }
+          ]
+        }
+      }
+    ]
+  }
