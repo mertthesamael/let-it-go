@@ -2,7 +2,7 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-lesson = "2MH7qg3Ga1YxjDHX916qRnKzwpX1sxqVpTbKB1h7jmfQ"
+lesson = "8N7hQRBWZJnjMW1U6kutDKCRd4BRGtBpaBr7v9i59iLp"
 
 [registry]
 url = "https://api.apr.dev"

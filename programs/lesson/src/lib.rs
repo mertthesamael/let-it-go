@@ -3,7 +3,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 pub mod constants;
 pub mod states;
 use crate::{constants::*, states::*};
-declare_id!("2MH7qg3Ga1YxjDHX916qRnKzwpX1sxqVpTbKB1h7jmfQ");
+declare_id!("8N7hQRBWZJnjMW1U6kutDKCRd4BRGtBpaBr7v9i59iLp");
 
 #[program]
 pub mod let_it_go {
