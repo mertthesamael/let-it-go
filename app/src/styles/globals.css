@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+  font-family: 'Montserrat';
+}
+body{
+  background:'red';
+  background-image: url('https://kriptokoin.com/wp-content/uploads/2021/08/Solana-SOL.jpg')!important;
+  background-size: cover!important;
+  background-position:center!important;
+  
+}
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
