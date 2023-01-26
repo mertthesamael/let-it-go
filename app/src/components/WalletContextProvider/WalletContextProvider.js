@@ -3,7 +3,6 @@ import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react
 import { WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import * as web3 from '@solana/web3.js'
 
-import '@solana/wallet-adapter-react-ui/styles.css'
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
 
 const WalletContextProvider = ({ children }) => {

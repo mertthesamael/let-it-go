@@ -2,6 +2,9 @@ import WalletContextProvider from '@/components/WalletContextProvider/WalletCont
 import BackgroundWrapper from '@/layouts/BackgroundWrapper/BackgroundWrapper'
 import { Html, Head, Main, NextScript } from 'next/document'
 import Header from "../layouts/Header/Header"
+
+
+
 export default function Document() {
   return (
     

@@ -3,9 +3,7 @@ import styles from '@/layouts/Header/header.module.scss'
 import Navitem from "@/components/Navitem/Navitem"
 import icon from '@/assets/solana-sol-icon.png'
 import WalletMultiButtonDynamic from "@/components/WalletMultiButtonDynamic/WalletMultiButtonDynamic"
-import { WalletModalButton } from "@solana/wallet-adapter-react-ui"
-
-
+import { WalletModalButton, WalletMultiButton } from "@solana/wallet-adapter-react-ui"
 
 const Header = () => {
 
@@ -25,12 +23,12 @@ const Header = () => {
             </Flex>
             <Flex justify='center'align='center' gap='2rem' w='100%' h='100%' >
             <Navitem text='Some Navitem' target='/'/>
-            <Navitem text='App' target='/'/>
+            <Navitem text='App' target='/app'/>
             <Navitem text='About Me' target='/'/>
             </Flex>
             <Flex w='100%' justify='center' align='center' h='100%' >
           
-            <WalletModalButton></WalletModalButton>
+            <WalletMultiButton></WalletMultiButton>
           
             </Flex>
             </Flex>

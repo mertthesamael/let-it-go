@@ -1,4 +1,7 @@
-const { Text } = require("@chakra-ui/react")
+import { useConnection } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+const { Text, Flex } = require("@chakra-ui/react")
 const { default: Link } = require("next/link")
 
 
@@ -6,6 +9,7 @@ const { default: Link } = require("next/link")
 
 
 const Navitem = ({text,target}) => {
+
 
 
     return(
