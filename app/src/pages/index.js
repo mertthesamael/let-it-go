@@ -35,7 +35,7 @@ export default function Home() {
         <Text fontSize='3rem'>Sorry for being real, but we have a problem.</Text>
        </Flex>
        <Flex>
-        <Text fontSize='1.5rem'>Even 2023 is just started, there is over 75K suicide event happened already. We can fix this. We can save humanity. But in order to do that, we need to be a little ' B R A V E '. We need to communicate. We need to talk about things that corrupts our mind. Take a deep breath, and just ;
+        <Text fontSize='1.5rem'>Even 2023 is just started, there is over 75K suicide event happened already. We can fix this. We can save humanity. But in order to do that, we need to be a little &apos; B R A V E &apos;. We need to communicate. We need to talk about things that corrupts our mind. Take a deep breath, and just ;
 
         </Text>
         
@@ -46,7 +46,7 @@ export default function Home() {
           <Button fontSize='1.5rem' p='1.7rem' onMouseOver={magic} onMouseLeave={antiMagic}>
          <span className={styles.cta}>Let it go</span>
           </Button>
-          <Text visibility='hidden' id='easterEgg'>Cool button, isn't it?</Text>
+          <Text visibility='hidden' id='easterEgg'>Cool button, isn&apos;t it?</Text>
           </Link>
         </Flex>
        <Flex>

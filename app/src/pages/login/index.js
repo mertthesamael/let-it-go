@@ -55,7 +55,7 @@ useEffect(() => {
 
            <LoginForm></LoginForm>
                 </Flex>
-                    <Text textAlign='center'>Be sure about info that you gave and check the info below if it's aight !</Text>
+                    <Text textAlign='center'>Be sure about info that you gave and check the info below if it&apos;s aight !</Text>
                 <Flex align='center' gap='1rem'>
                     <Flex>
                         <Img p='2px' borderRadius='50px' border='1px solid white' w='50px' h='50px'src={userInfo.picture}></Img>

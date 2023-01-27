@@ -34,7 +34,7 @@ const App = () => {
             <Flex w='100%' flexDir='column'>
 
             <Flex gap='2rem' p='5rem' flexWrap='wrap' overflow='auto' justify={['center',"center",'flex-start']}  w='100%'>
-            {post.map(post => <Note post={post}></Note>)}
+            {post.map(post => <Note key={post.content} post={post}></Note>)}
             </Flex>
                 
             <Flex pos='absolute' bottom='5rem' right='5rem'>
