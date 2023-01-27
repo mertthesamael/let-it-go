@@ -1,7 +1,7 @@
 ## Let it go (No, it's not the Frozen one)
 ## I'LL EDIT README.MD BUT I NEED SOME SLEEP RN FORGIVE ME
 ![image](https://user-images.githubusercontent.com/79616834/215003942-9339af3e-2bae-495f-adc0-b58baefdd782.png)
-
+Live : https://let-it-go.vercel.app/
 So this is the final project for Patika - Solana practicum.
 
 
