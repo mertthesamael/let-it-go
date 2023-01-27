@@ -2,7 +2,7 @@ import { PostContext } from "@/store/postContext"
 import { useRouter } from "next/router"
 import { useContext, useState } from "react"
 
-const { Modal, ModalOverlay, useDisclosure, ModalContent, ModalHeader, ModalBody, Textarea, Button, Text, useToast, ChakraProvider } = require("@chakra-ui/react")
+const { Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, Textarea, Button, Text, useToast, ChakraProvider } = require("@chakra-ui/react")
 
 
 
@@ -15,12 +15,13 @@ const Createpost = ({isOpen, onClose}) => {
     const router = useRouter()
     const post = async(e) => {
         e.preventDefault()
+       
         if(!e.target.post.value){
             setErr(true)
         }else{
 
             try{
-                await create(e.target.post.value).then(() => router('/app'))
+                await create(e.target.post.value).then(() =>  onClose())
             }catch(err){
                 toast({
                     status:'error',

@@ -1,5 +1,6 @@
 import { PostContext } from "@/store/postContext"
 import { useWallet } from "@solana/wallet-adapter-react"
+import { useRouter } from "next/router"
 
 const { Input, Button, useToast } = require("@chakra-ui/react")
 const { useContext, useEffect, useState } = require("react")
@@ -14,7 +15,8 @@ const LoginForm = () => {
     const toast = useToast()
     const [nameEr, setNameEr] = useState()
     const [pictureEr, setPictureEr] = useState()
-    const initUser = (e) => {
+    const router = useRouter()
+    const initUser = async(e) => {
         e.preventDefault()
         if(publicKey){
             if(!e.target.name.value){
@@ -22,7 +24,7 @@ const LoginForm = () => {
                 setNameEr(!e.target.name.value)
             }else{
 
-                init('e.target.name.value','e.target.pp.value')
+                await init('e.target.name.value','e.target.pp.value').then(() => router.push('/app'))
             }
         }else{
 
