@@ -2,6 +2,7 @@ import Createpost from "@/components/Createpost/Createpost"
 import LoginForm from "@/components/LoginForm/LoginForm"
 import WalletMultiButtonDynamic from "@/components/WalletMultiButtonDynamic/WalletMultiButtonDynamic"
 import { PostContext } from "@/store/postContext"
+import { useWallet } from "@solana/wallet-adapter-react"
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
 import { useRouter } from "next/router"
 import { useContext, useEffect } from "react"
@@ -15,12 +16,13 @@ const Login = () => {
 
     const {userInfo, init, isInitialized} = useContext(PostContext)
     const router = useRouter()
+    const {publicKey} = useWallet()
 
 
 
 useEffect(() => {
-    if(isInitialized){
-        router.push('/app')
+    if(isInitialized&&publicKey){
+        router.push('/')
     }
 },[userInfo])
 
