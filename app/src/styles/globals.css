@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("@solana/wallet-adapter-react-ui/styles.css");
+
 @font-face {
   font-family: Montserrat;
   src: url("../assets/Montserrat-VariableFont_wght.ttf");
