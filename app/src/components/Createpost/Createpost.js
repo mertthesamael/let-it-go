@@ -1,7 +1,8 @@
 import { PostContext } from "@/store/postContext"
+import { useRouter } from "next/router"
 import { useContext, useState } from "react"
 
-const { Modal, ModalOverlay, useDisclosure, ModalContent, ModalHeader, ModalBody, Textarea, Button, Text, useToast } = require("@chakra-ui/react")
+const { Modal, ModalOverlay, useDisclosure, ModalContent, ModalHeader, ModalBody, Textarea, Button, Text, useToast, ChakraProvider } = require("@chakra-ui/react")
 
 
 
@@ -11,14 +12,15 @@ const Createpost = ({isOpen, onClose}) => {
     const {create} = useContext(PostContext)
     const toast = useToast()
     const [err,setErr] = useState(false)
-    const post = (e) => {
+    const router = useRouter()
+    const post = async(e) => {
         e.preventDefault()
         if(!e.target.post.value){
             setErr(true)
         }else{
 
             try{
-                create(e.target.post.value)
+                await create(e.target.post.value).then(() => router('/app'))
             }catch(err){
                 toast({
                     status:'error',
@@ -29,6 +31,7 @@ const Createpost = ({isOpen, onClose}) => {
     }
 
     return(
+      
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent color='white' h='50rem'w='50rem' bgColor='rgba( 255, 255, 255, 0.1 )' backdropFilter='blur(29px)'>
@@ -44,6 +47,7 @@ const Createpost = ({isOpen, onClose}) => {
                 </ModalBody>
             </ModalContent>
         </Modal>
+       
     )
 }
 
