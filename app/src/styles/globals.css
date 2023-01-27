@@ -3,6 +3,37 @@
 *{
   font-family: 'Montserrat';
 }
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8f54a0 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffff;
+    border-radius: 10px;
+    border: 0px solid #ffffff;
+  }
+
+
+
+
+
+
+
+
 body{
   background:'red';
   background-image: url('https://kriptokoin.com/wp-content/uploads/2021/08/Solana-SOL.jpg')!important;

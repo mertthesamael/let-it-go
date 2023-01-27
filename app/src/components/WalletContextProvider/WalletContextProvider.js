@@ -11,8 +11,8 @@ const WalletContextProvider = ({ children }) => {
 
 	return (
 	<ConnectionProvider endpoint={endpoint}>
-	    <WalletProvider wallets={[wallets]}>
-	      <WalletModalProvider>
+	    <WalletProvider autoConnect wallets={[wallets]}>
+	      <WalletModalProvider >
 	        { children }
         </WalletModalProvider>
       </WalletProvider>

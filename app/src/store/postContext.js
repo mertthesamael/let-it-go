@@ -19,11 +19,12 @@ export const PostContextWrapper = (props) => {
     const [transactionPending, setTransactionPending] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [lastPostId, setLastPostId] = useState()
+    const [userInfo, setUserInfo] = useState({name:'username',picture:'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/solana-sol-icon.png'})
   
     const anchorWallet = useAnchorWallet();
     const { connection } = useConnection();
     const { publicKey } = useWallet()
-    const PROGRAM_KEY = new PublicKey('Dz1ZZ3k4Q5iUVguPUydRxbVfQpZ8BnQ17faf1JqRMJFq')
+    const PROGRAM_KEY = new PublicKey('J3fYWe4kFrRvyfp7d7Fr8wpvzMiUwwW4XYwM1LLneFzD')
     const program = useMemo(() => {
       if (anchorWallet) {
         const provider = new anchor.AnchorProvider(connection, anchorWallet, anchor.AnchorProvider.defaultOptions())
@@ -43,6 +44,7 @@ export const PostContextWrapper = (props) => {
               setLastPostId(user.lastPostId)
               const postAccounts = await program.account.messageAccount.all(publicKey.toString())
               setPosts(postAccounts)
+              setUserInfo({name:user.name,picture:user.avatar,posted:user.messageCount})
             }
           } catch (error) {
             console.log(error)
@@ -50,24 +52,24 @@ export const PostContextWrapper = (props) => {
           }
         }
       }
-      console.log(posts)
+     
   
       start()
+      if(initialized){
+        setUserInfo({name:user.name,picture:user.avatar,posted:user.messageCount})
+      }
   
     }, [program, publicKey, transactionPending]);
   
   
-    const initUser = async () => {
+    const initUser = async (name,avatar) => {
       if (program && publicKey) {
         try {
           setTransactionPending(true)
           const [userPda] = findProgramAddressSync([utf8.encode('user'), publicKey.toBuffer()], program.programId)
-          const name = "Mert";
-          const avatar = "test";
-        
-          console.log(program.methods.initUser(name, avatar))
+          
           await program.methods
-          .initUser(name, avatar)
+          .initUser(userInfo.name, userInfo.picture)
           .accounts({
             userAccount: userPda,
             authority: publicKey,
@@ -84,15 +86,15 @@ export const PostContextWrapper = (props) => {
       }
     }
   
-    const createPost = async () => {
+    const createPost = async (val) => {
       if (program && publicKey) {
         setTransactionPending(true)
         try {
           const [userPda] = findProgramAddressSync([utf8.encode('user'), publicKey.toBuffer()], program.programId)
           const [postPda] = findProgramAddressSync([utf8.encode('message'), publicKey.toBuffer(), Uint8Array.from([lastPostId])], program.programId)
-  
+          console.log(program.methods)
           await program.methods
-            .newMessage("Third Message")
+            .newMessage(val)
             .accounts({
               userAccount: userPda,
               messageAccount: postPda,
@@ -109,9 +111,18 @@ export const PostContextWrapper = (props) => {
       }
     }
 
+    const userInfoHandler = (key,value) => {
+      setUserInfo(value)
+    }
     return(
         <PostContext.Provider value={{
-            post:posts
+            post:posts,
+            create:createPost,
+            init:initUser,
+            userInfo:userInfo,
+            userInfoHandler:userInfoHandler,
+            isInitialized:initialized,
+            
             }}>
 
             {props.children}
