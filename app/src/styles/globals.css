@@ -1,8 +1,10 @@
-
-@import url("@solana/wallet-adapter-react-ui/styles.css");
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+  font-family: Montserrat;
+  src: url("../assets/Montserrat-VariableFont_wght.ttf");
+}
 *{
-  font-family: 'Ubuntu';
+  font-family: 'Montserrat'!important;
 }
 
 
