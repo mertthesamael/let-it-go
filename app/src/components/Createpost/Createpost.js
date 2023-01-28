@@ -15,13 +15,18 @@ const Createpost = ({isOpen, onClose}) => {
     const router = useRouter()
     const post = async(e) => {
         e.preventDefault()
-       
+
         if(!e.target.post.value){
             setErr(true)
+            
         }else{
 
             try{
-                await create(e.target.post.value).then(() =>  onClose())
+                create(e.target.post.value)
+                setTimeout(() => {
+                    onClose()
+                }, 1000);
+               router.reload(window.location.pathname)
             }catch(err){
                 toast({
                     status:'error',
