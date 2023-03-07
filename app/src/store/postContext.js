@@ -56,7 +56,7 @@ export const PostContextWrapper = (props) => {
   
       start()
       if(initialized){
-        setUserInfo({name:user.name,picture:user.avatar,posted:user.messageCount})
+        setUserInfo({name:user?.name,picture:user?.avatar,posted:user?.messageCount})
       }
   
     }, [program, publicKey, transactionPending]);

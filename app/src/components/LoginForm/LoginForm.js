@@ -24,7 +24,8 @@ const LoginForm = () => {
                 setNameEr(!e.target.name.value)
             }else{
 
-                await init('e.target.name.value','e.target.pp.value').then(() => router.reload(window.location.pathname))
+                await init('e.target.name.value','e.target.pp.value').then(() => router.push('/app'))
+
             }
         }else{
 
