@@ -1,5 +1,5 @@
 ## Let it Go :snowflake: (No, it's not the Frozen one)
-Live : https://let-it-go.vercel.app/
+Live : https://let-it-goaucs1c8-mertthesamael.vercel.app/
 (OFC this DaPP works on Devnet)
 ![image](https://user-images.githubusercontent.com/79616834/215003942-9339af3e-2bae-495f-adc0-b58baefdd782.png)
 
